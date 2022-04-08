@@ -1,0 +1,67 @@
+<!-- Top header START -->
+<div class="navbar-top navbar-dark bg-light py-2 mx-2 mx-md-4 rounded-bottom-4">
+  <div class="container">
+    <div class="d-lg-flex justify-content-lg-between align-items-center">
+      <!-- Navbar top Left-->
+      <!-- Top info -->
+      <ul class="nav align-items-center justify-content-center">
+        <li class="nav-item me-3" data-bs-toggle="tooltip" data-bs-animation="false" data-bs-placement="bottom" data-bs-original-title="Sunday CLOSED">
+          <form action="" >
+            <div class="">
+              <span class="">
+                Москва
+              </span>
+            </div>
+          </form>
+        </li>
+      </ul>
+      <!-- Navbar top Right-->
+      <div class="d-flex align-items-center justify-content-center">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Top header END -->
+<!-- Header START -->
+<header class="navbar-light  ">
+
+  <!-- Logo Nav START -->
+  <nav class="navbar navbar-expand-xl">
+    <div class="container">
+      <!-- Logo START -->
+      <%= link_to root_path, class: 'navbar-brand' do %>
+        <%= image_tag 'logo.png', class: 'light-mode-item navbar-brand-item' %>
+      <% end %>
+      <!-- Logo END -->
+      <!-- Responsive navbar toggler -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-animation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <!-- Main navbar START -->
+      <div class="navbar-collapse collapse" id="navbarCollapse">
+        <!-- Nav Main menu START -->
+        <%= render  'header/menu' %>
+        <!-- Nav Main menu END -->
+        <!-- Nav Search START -->
+        <%= render  'header/search' %>
+        <!-- Nav Search END -->
+      </div>
+      
+      <!-- Main navbar END -->
+      <!-- Profile START -->
+      <% if user_signed_in? %>
+        <%= render  'header/profile_user' %>
+      <% else %>
+        <%= render  'header/profile_guest' %>
+      <% end %>
+      <!-- Profile START -->
+    </div>
+  </nav>
+  <!-- Logo Nav END -->
+  
+</header>
+<!-- Header END -->

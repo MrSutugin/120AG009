@@ -1,0 +1,137 @@
+<!-- ======================= Page Banner START -->
+<section class="pt-0 pb-0">
+  <!-- Main banner background image -->
+  <div class="container-fluid px-0">
+    <div class="bg-light h-100px h-md-100px rounded-0">
+    </div>
+  </div>
+  <div class="container mt-n4">
+    <div class="row">
+      <!-- Profile banner START -->
+      <div class="col-12">
+        <div class="card bg-transparent card-body p-0 mb-4">
+          <div class="row d-flex justify-content-between">
+            <!-- Avatar -->
+            <div class="col-auto">
+              <div class="avatar avatar-xxl mt-n3">
+                <%= image_tag 'no_avatar', class: 'bg-light avatar-img rounded-circle border border-white border-3' %>
+              </div>
+            </div>
+            <!-- Profile info -->
+            <div class="col justify-content-between align-items-center">
+              <div>
+                <h1 class="h5 mb-3">
+                  <%= link_to user_path(@user) do %>
+                    <span>@<%= @user.name %></span>
+                    <i class="bi bi-patch-check-fill text-info small"></i>
+                  <% end %>
+                </h1>
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-star text-warning me-2"></i>
+                    <span>0.0</span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-comment-dots text-black-50 me-2"></i>
+                    <span>0 Отзывов</span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-id-card text-black-50 me-2"></i>
+                    <span><%= @user.first_name %></span>
+                    <span><%= @user.last_name %></span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-fingerprint text-black-50 me-2"></i>
+                    <span><%= @user.user_uid %></span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-flag text-black-50 me-2"></i>
+                    <span>Пожаловаться</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Profile banner END -->
+        <!-- Advanced filter responsive toggler START -->
+        <div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
+          <button class="btn btn-light w-100 d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <i class="fas fa-bars me-2"></i>
+            Меню
+          </button>
+        </div>
+        <!-- Advanced filter responsive toggler END -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ======================= Page Banner END -->
+<!-- ======================= Page content START -->
+<section class="pt-0">
+  <div class="container">
+    <div class="row">
+      <!-- Right sidebar START -->
+      <div class="col-lg-4">
+        <!-- Responsive offcanvas body START -->
+        <nav class="navbar navbar-dark navbar-expand-xl mx-0">
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <!-- Offcanvas header -->
+            <div class="offcanvas-header bg-light">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <!-- Offcanvas body -->
+            <div class="offcanvas-body p-3 p-xl-0">
+              <div class="bg-light rounded-3 pb-0 p-3 w-100">
+                <!-- Dashboard menu -->
+                <div class="list-group list-group-dark list-group-borderless">
+                  <%= link_to user_path(@user), class: 'list-group-item active' do %>
+                    <i class="bi bi-house-door fa-fw me-2"></i>
+                    <span>Главная</span>
+                  <% end %>
+                  <%= link_to user_path(@user), class: 'list-group-item' do %>
+                    <i class="bi bi-house-door fa-fw me-2"></i>
+                    <span>Предложения</span>
+                  <% end %>
+                  <%= link_to user_path(@user), class: 'list-group-item' do %>
+                    <i class="bi bi-house-door fa-fw me-2"></i>
+                    <span>Отзывы</span>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- Responsive offcanvas body END -->
+      </div>
+      <!-- Right sidebar END -->
+      <!-- Main content START -->
+      <div class="col-lg-8">
+        <h4>Здравствуйте, меня зовут <%= @user.first_name %> <%= @user.last_name %>!</h4>
+        <p><small>На сервисе с <%= @user.created_at %></small></p>
+        <h5>Информация</h5>
+        <% if @user.description %>
+          <p><%= @user.description %></p>
+        <% else %>
+          <p>Информация отсутствует</p>
+        <% end %>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+            <i class="bi bi-house-door me-2"></i>
+            <span>Живет в город не указан</span>
+          </li>
+          <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+            <i class="bi bi-translate me-2"></i>
+            <span>Говорит на язык не указан</span>
+          </li>
+        </ul>
+        <hr>
+        <h5>Объявлений пользователя <%= @user.first_name %> <%= @user.last_name %></h5>
+      </div>
+      <!-- Main content END -->
+    </div>
+    <!-- Row END -->
+  </div>
+</section>
+<!-- ======================= Page content END -->

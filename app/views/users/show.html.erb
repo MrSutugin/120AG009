@@ -1,0 +1,343 @@
+<!-- ======================= Page Banner START -->
+<section class="pt-0 pb-0">
+  <!-- Main banner background image -->
+  <div class="container-fluid px-0">
+    <div class="bg-light h-100px h-md-100px rounded-0">
+    </div>
+  </div>
+  <div class="container mt-n4">
+    <div class="row">
+      <!-- Profile banner START -->
+      <div class="col-12">
+        <div class="card bg-transparent card-body p-0 mb-4">
+          <div class="row d-flex justify-content-between">
+            <!-- Avatar -->
+            <div class="col-auto">
+              <div class="avatar avatar-xxl mt-n3">
+                <%= image_tag 'no_avatar', class: 'bg-light avatar-img rounded-circle border border-white border-3' %>
+              </div>
+            </div>
+            <!-- Profile info -->
+            <div class="col justify-content-between align-items-center">
+              <div>
+                <h1 class="h5 mb-3">
+                  <%= link_to user_path(@user) do %>
+                    <span>@<%= @user.name %></span>
+                    <i class="bi bi-patch-check-fill text-info small"></i>
+                  <% end %>
+                </h1>
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-star text-warning me-2"></i>
+                    <span>0.0</span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-comment-dots text-black-50 me-2"></i>
+                    <span>0 Отзывов</span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-id-card text-black-50 me-2"></i>
+                    <span><%= @user.first_name %></span>
+                    <span><%= @user.last_name %></span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-fingerprint text-black-50 me-2"></i>
+                    <span><%= @user.user_uid %></span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="fas fa-flag text-black-50 me-2"></i>
+                    <span>Пожаловаться</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Profile banner END -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ======================= Page Banner END -->
+<!-- ======================= Page content START -->
+<section class="pt-0">
+  <div class="container">
+    <div class="row">
+      <!-- Left sidebar START -->
+      <div class="col-lg-4">
+        <!-- Sidebar body -->
+        <div class="offcanvas-body p-0">
+          <div class="bg-light rounded-3 p-3 w-100">
+            <!-- Sidebar info -->
+            <h5 class="mb-4">Пользователь <%= @user.first_name %> <%= @user.last_name %> подтвердил</h5>
+            <p class="mb-2">
+              <i class="bi bi-check-lg me-2"></i>
+              <span>Личность</span>
+            </p>
+            <p class="mb-2">
+              <i class="bi bi-check-lg me-2"></i>
+              <span>Адрес электронной почты</span>
+            </p>
+            <p class="mb-4">
+              <i class="bi bi-check-lg me-2"></i>
+              <span>Номер телефона</span>
+            </p>
+            <p class="mb-0">
+              <small>
+                <a href="#"><strong>Подробнее</strong></a> о том, как подтверждение аккаунта защищает сообщество <strong>Счастливые Часы</strong>.
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- Left sidebar END -->
+      <!-- Main content START -->
+      <div class="col-lg-8">
+        <h4>Здравствуйте, меня зовут <%= @user.first_name %> <%= @user.last_name %>!</h4>
+        <p><small>На сервисе с <%= @user.created_at %></small></p>
+        <h5>Информация</h5>
+        <% if @user.description %>
+          <p><%= @user.description %></p>
+        <% else %>
+          <p>Информация отсутствует</p>
+        <% end %>
+        <ul class="list-inline mb-0">
+          <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+            <i class="bi bi-house-door me-2"></i>
+            <span>Живет в город не указан</span>
+          </li>
+          <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+            <i class="bi bi-translate me-2"></i>
+            <span>Говорит на язык не указан</span>
+          </li>
+        </ul>
+        <hr>
+        <h5 class="mb-4">Объявлений пользователя <%= @user.first_name %> <%= @user.last_name %></h5>
+        <div class="row g-4">
+          <!-- Card START -->
+          <div class="col-md-6">
+            <div class="card overflow-hidden bg-transparent">
+              <div class="position-relative">
+                <!-- Image -->
+                <img class="card-img-top" src="https://picsum.photos/800/601" alt="Card image">
+                <!-- Overlay -->
+                <div class="bg-overlay bg-dark opacity-4"></div>
+                <div class="card-img-overlay d-flex align-items-start flex-column">
+                  <!-- Card overlay bottom -->
+                  <div class="w-100 mt-auto d-inline-flex">
+                    <div class="d-flex align-items-center bg-light bg-opacity-50 p-2 rounded-2 shadow-lg">
+                      <!-- Avatar -->
+                      <div class="avatar avatar-md me-2">
+                        <img class="avatar-img rounded-circle border border-white border-3" src="https://i.pravatar.cc/300" alt="avatar">
+                      </div>
+                      <!-- Avatar info -->
+                      <div>
+                        <h6 class="mb-0">
+                          <%= link_to user_path(@user), class: 'text-dark' do %>
+                            <%= @user.first_name %> <%= @user.last_name %>
+                          <% end %>
+                        </h6>
+                        <span class="small text-dark">Частное лицо</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card body -->
+              <div class="card-body px-0 pb-0">
+                <!-- Badge and icon -->
+                <div class="d-flex justify-content-between mb-3">
+                  <div class="hstack gap-2">
+                    <a href="index-3.html#" class="badge bg-dark text-white">Категория предложения</a>
+                  </div>
+                  <a href="index-3.html#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
+                </div>
+                <!-- Title -->
+                <h5 class="card-title h6">
+                  <%= link_to user_path(@user) do %>
+                    Не очень длинное описание предложения не более 70 символов
+                  <% end %>
+                </h5>
+                <!-- Rating -->
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="bi bi-star-fill text-warning me-2"></i>
+                    <span>0.0</span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="bi bi-cash-stack me-2"></i>
+                    <strong>12 000.00</strong>
+                    <span>руб.</span>
+                  </li>
+                </ul>
+                <!-- Divider -->
+                <hr>
+                <!-- Time -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div class="d-flex align-items-center">
+                    <h4 class="text-success mb-0 me-2">- 10</h4>
+                    <strong class="mb-0">%</strong>
+                  </div>
+                  <span class="h6 fw-light mb-0 ">
+                    <i class="far fa-clock text-danger me-2"></i>
+                    6h 56m
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card END -->
+          <!-- Card START -->
+          <div class="col-md-6">
+            <div class="card overflow-hidden bg-transparent">
+              <div class="position-relative">
+                <!-- Image -->
+                <img class="card-img-top" src="https://picsum.photos/800/602" alt="Card image">
+                <!-- Overlay -->
+                <div class="bg-overlay bg-dark opacity-4"></div>
+                <div class="card-img-overlay d-flex align-items-start flex-column">
+                  <!-- Card overlay bottom -->
+                  <div class="w-100 mt-auto d-inline-flex">
+                    <div class="d-flex align-items-center bg-light bg-opacity-50 p-2 rounded-2 shadow-lg">
+                      <!-- Avatar -->
+                      <div class="avatar avatar-md me-2">
+                        <img class="avatar-img rounded-circle border border-white border-3" src="https://i.pravatar.cc/310" alt="avatar">
+                      </div>
+                      <!-- Avatar info -->
+                      <div>
+                        <h6 class="mb-0">
+                          <%= link_to user_path(@user), class: 'text-dark' do %>
+                            <%= @user.first_name %> <%= @user.last_name %>
+                          <% end %>
+                        </h6>
+                        <span class="small text-dark">ООО "Счастливые часы"</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card body -->
+              <div class="card-body px-0 pb-0">
+                <!-- Badge and icon -->
+                <div class="d-flex justify-content-between mb-3">
+                  <div class="hstack gap-2">
+                    <a href="index-3.html#" class="badge bg-dark text-white">Категория предложения</a>
+                  </div>
+                  <a href="index-3.html#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
+                </div>
+                <!-- Title -->
+                <h5 class="card-title h6">
+                  <%= link_to user_path(@user) do %>
+                    Не очень длинное описание предложения не более 70 символов
+                  <% end %>
+                </h5>
+                <!-- Rating -->
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="bi bi-star-fill text-warning me-2"></i>
+                    <span>0.0</span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="bi bi-cash-stack me-2"></i>
+                    <strong>12 000.00</strong>
+                    <span>руб.</span>
+                  </li>
+                </ul>
+                <!-- Divider -->
+                <hr>
+                <!-- Time -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div class="d-flex align-items-center">
+                    <h4 class="text-success mb-0 me-2">- 30</h4>
+                    <strong class="mb-0">%</strong>
+                  </div>
+                  <span class="h6 fw-light mb-0 ">
+                    <i class="far fa-clock text-danger me-2"></i>
+                    6h 56m
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card END -->
+          <!-- Card START -->
+          <div class="col-md-6">
+            <div class="card overflow-hidden bg-transparent">
+              <div class="position-relative">
+                <!-- Image -->
+                <img class="card-img-top" src="https://picsum.photos/800/600" alt="Card image">
+                <!-- Overlay -->
+                <div class="bg-overlay bg-dark opacity-4"></div>
+                <div class="card-img-overlay d-flex align-items-start flex-column">
+                  <!-- Card overlay bottom -->
+                  <div class="w-100 mt-auto d-inline-flex">
+                    <div class="d-flex align-items-center bg-light bg-opacity-50 p-2 rounded-2 shadow-lg">
+                      <!-- Avatar -->
+                      <div class="avatar avatar-md me-2">
+                        <img class="avatar-img rounded-circle border border-white border-3" src="https://i.pravatar.cc/300" alt="avatar">
+                      </div>
+                      <!-- Avatar info -->
+                      <div>
+                        <h6 class="mb-0">
+                          <%= link_to user_path(@user), class: 'text-dark' do %>
+                            <%= @user.first_name %> <%= @user.last_name %>
+                          <% end %>
+                        </h6>
+                        <span class="small text-dark">Частное лицо</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card body -->
+              <div class="card-body px-0 pb-0">
+                <!-- Badge and icon -->
+                <div class="d-flex justify-content-between mb-3">
+                  <div class="hstack gap-2">
+                    <a href="index-3.html#" class="badge bg-dark text-white">Категория предложения</a>
+                  </div>
+                  <a href="index-3.html#" class="h6 fw-light mb-0"><i class="far fa-bookmark"></i></a>
+                </div>
+                <!-- Title -->
+                <h5 class="card-title h6">
+                  <%= link_to user_path(@user) do %>
+                    Не очень длинное описание предложения не более 70 символов
+                  <% end %>
+                </h5>
+                <!-- Rating -->
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="bi bi-star-fill text-warning me-2"></i>
+                    <span>0.0</span>
+                  </li>
+                  <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0">
+                    <i class="bi bi-cash-stack me-2"></i>
+                    <strong>12 000.00</strong>
+                    <span>руб.</span>
+                  </li>
+                </ul>
+                <!-- Divider -->
+                <hr>
+                <!-- Time -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <div class="d-flex align-items-center">
+                    <h4 class="text-success mb-0 me-2">- 15</h4>
+                    <strong class="mb-0">%</strong>
+                  </div>
+                  <span class="h6 fw-light mb-0 ">
+                    <i class="far fa-clock text-danger me-2"></i>
+                    2h 56m
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Card END -->
+        </div>
+      </div>
+      <!-- Main content END -->
+    </div>
+    <!-- Row END -->
+  </div>
+</section>
+<!-- ======================= Page content END -->

@@ -1,0 +1,34 @@
+<div class="dropdown ms-1 ms-lg-0">
+  <a class="avatar avatar-sm p-0" href="index-5.html#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+    <%= image_tag 'no_avatar', class: 'avatar-img rounded-circle' %>
+  </a>
+  <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+    <!-- Profile info -->
+    <li class="px-3">
+      <div class="d-flex align-items-center">
+        <!-- Avatar -->
+        <div class="avatar me-3">
+          <%= image_tag 'no_avatar', class: 'avatar-img rounded-circle shadow' %>
+        </div>
+        <div>
+          <%= link_to user_path(current_user), class: 'h5' do %>
+            <%= current_user.name %>
+          <% end %>
+          <p class="small m-0"><%= current_user.email %></p>
+        </div>
+      </div>
+      <hr>
+    </li>
+    <!-- Links -->
+    <li>
+      <%= link_to user_path(current_user), class: 'dropdown-item' do %>
+        <i class="fas fa-user-tie fa-fw me-2"></i> Мой аккаунт
+      <% end %>
+    </li>
+    <li>
+      <%= link_to session_path, class: 'dropdown-item text-danger', data: { 'turbo-method': :delete } do %>
+        <i class="bi bi-box-arrow-right fa-fw me-2"></i> Выйти
+      <% end %>
+    </li>
+  </ul>
+</div>

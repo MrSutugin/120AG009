@@ -1,0 +1,29 @@
+<div class="dropdown ms-1 ms-lg-0">
+  <a class="avatar avatar-sm p-0" href="index-5.html#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+    <%= image_tag 'no_avatar', class: 'avatar-img rounded-circle' %>
+  </a>
+  <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+    <!-- Profile info -->
+    <li class="px-3">
+      <div class="d-flex align-items-center">
+        <!-- Avatar -->
+        <div class="avatar me-3">
+          <%= image_tag 'no_avatar', class: 'avatar-img rounded-circle shadow' %>
+        </div>
+        <div>
+          <%= link_to new_user_path, class: 'h6' do %>
+            Регистрация
+          <% end %>
+          <p class="small m-0">Бесплатно</p>
+        </div>
+      </div>
+      <hr>
+    </li>
+    <!-- Links -->
+    <li>
+      <%= link_to new_session_path, class: 'dropdown-item' do %>
+        <i class="bi bi-box-arrow-in-right fa-fw me-2"></i> Войти
+      <% end %>
+    </li>
+  </ul>
+</div>

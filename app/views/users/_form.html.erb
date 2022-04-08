@@ -1,0 +1,75 @@
+<%= form_with model: @user do |f| %>
+  <%= render  'errors/model_form', model: @user %>
+  <!-- Email -->
+  <div class="mb-4">
+    <%= f.label :email, 'Email', class: 'form-label' %>
+    <div class="input-group input-group-lg">
+      <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+        <i class="bi bi-envelope-fill"></i>
+      </span>
+      <%= f.email_field :email, class: 'form-control border-0 bg-light rounded-end ps-1' %>
+    </div>
+  </div>
+  <!-- Name -->
+  <div class="mb-4">
+    <%= f.label :name, 'Логин', class: 'form-label' %>
+    <div class="input-group input-group-lg">
+      <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+        <i class="fas fa-at"></i>
+      </span>
+      <%= f.text_field :name, class: 'form-control border-0 bg-light rounded-end ps-1' %>
+    </div>
+  </div>
+  <!-- Fio -->
+  <div class="row">
+    <div class="col-lg-6">
+      <!-- First name -->
+      <div class="mb-4">
+        <%= f.label :first_name, 'Имя', class: 'form-label' %>
+        <div class="input-group input-group-lg">
+          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+            <i class="fas fa-user"></i>
+          </span>
+          <%= f.text_field :first_name, class: 'form-control border-0 bg-light rounded-end ps-1' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <!-- Last name -->
+      <div class="mb-4">
+        <%= f.label :last_name, 'Фамилия', class: 'form-label' %>
+        <div class="input-group input-group-lg">
+          <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+            <i class="fas fa-user"></i>
+          </span>
+          <%= f.text_field :last_name, class: 'form-control border-0 bg-light rounded-end ps-1' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Password -->
+  <div class="mb-4">
+    <%= f.label :password, 'Пароль', class: 'form-label' %>
+    <div class="input-group input-group-lg">
+      <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+        <i class="fas fa-lock"></i>
+      </span>
+      <%= f.password_field :password, class: 'form-control border-0 bg-light rounded-end ps-1' %>
+    </div>
+  </div>
+  <!-- Confirm Password -->
+  <div class="mb-4">
+    <%= f.label :password_confirmation, 'Подтвердить пароль', class: 'form-label' %>
+    <div class="input-group input-group-lg">
+      <span class="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+        <i class="fas fa-lock"></i>
+      </span>
+      <%= f.password_field :password_confirmation, class: 'form-control border-0 bg-light rounded-end ps-1' %>
+    </div>
+  </div>
+  <div class="align-items-center mt-0">
+    <div class="d-grid">
+      <%= f.submit 'Зарегистрироваться', class: 'btn btn-primary mb-0' %>
+    </div>
+  </div>
+<% end %>

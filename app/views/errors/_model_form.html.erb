@@ -1,0 +1,14 @@
+ <% if model.errors.any? %>
+  <div id="error_explanation"  class="alert alert-danger" role="alert">
+    <h5>
+      <span>😖</span>
+      Что-то пошло не так
+    </h5>
+    <p class="mb-0">
+      <% model.errors.each do |error| %>
+        <span>👉</span>
+        <%= error.full_message %>
+      <% end %>
+    </p>
+  </div>
+<% end %>

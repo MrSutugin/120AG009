@@ -1,0 +1,66 @@
+@import './theme/style.css';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+/* ================== New ================== */
+
+.navbar-brand {
+  margin-right: 0rem;
+}
+
+@media (max-width: 1199.98px) {
+  .navbar-expand-xl .navbar-brand .navbar-brand-item {
+    height: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar-expand-xl .navbar-brand .navbar-brand-item {
+    height: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar-expand-xl .navbar-nav .nav-link {
+    padding-right: 0rem;
+    padding-left: 1rem;
+  }
+}
+.nav-item__search {
+  position: relative;
+}
+.loaction{
+  position: absolute;
+  top: -25px;
+}
+section {
+  padding-top: 0rem!important;
+}
+.offcanvas-bottom {
+  height: 80%;
+}
+.modal-backdrop {
+
+  display: none;
+}
+
+@media (min-width: 1200px){
+  .dropdown-width-lg {
+    width: 40rem;
+    padding: 0;
+  }
+}
+h4, .h4 {
+  font-size: calc(1.2rem + 0.075vw);
+}
+h5, .h5 {
+  font-size: calc(1.0rem + 0.075vw);
+}
+.avatar-xxl {
+  width: 6rem;
+  height: 6rem;
+}
+.list-group-dark .list-group-item {
+  color: #24292d;
+}
+.list-group-dark .list-group-item:not(.bg-danger-soft-hover):hover, .list-group-dark .list-group-item:not(.bg-danger-soft-hover).active {
+  color: #066ac9!important;
+  background-color: rgba(6, 106, 201, 0.1)!important;
+}

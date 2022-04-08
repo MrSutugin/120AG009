@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MP</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= render  'header/head' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <%= render  'header/main' %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= render  'footer/main' %>
+    <%= render  'footer/scripts' %>
+  </body>
+</html>
