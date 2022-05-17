@@ -1,0 +1,24 @@
+<div class="list-group list-group-dark list-group-borderless">
+  <%= link_to account_path, class: 'list-group-item' do %>
+    <i class="fas fa-chart-line fa-fw me-2"></i> Панель управления
+  <% end %>
+  <%= link_to account_conversations_path, class: 'list-group-item' do %>
+    <i class="fas fa-comments fa-fw me-2"></i> Мои сообщения
+  <% end %>
+  <%= link_to account_company_path, class: 'list-group-item' do %>
+    <i class="fas fa-seedling fa-fw me-2"></i> Мое товарищество
+  <% end %>
+  <%= link_to account_journal_path, class: 'list-group-item' do %>
+    <i class="fas fa-book fa-fw me-2"></i> Мой дневник
+  <% end %>
+  <%= link_to account_ads_path, class: 'list-group-item' do %>
+    <i class="fas fa-bullhorn fa-fw me-2"></i> Мои объявления
+  <% end %>
+  <%= link_to account_favorite_path, class: 'list-group-item' do %>
+    <i class="fas fa-bookmark fa-fw me-2"></i> Мое избранное
+  <% end %>
+  <%= link_to session_path, class: 'list-group-item text-danger bg-danger-soft-hover', data: { 'turbo-method': :delete } do %>
+    <i class="fas fa-sign-out-alt fa-fw me-2"></i> Выйти
+  <% end %>
+</div>
+

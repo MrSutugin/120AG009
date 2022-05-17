@@ -17,19 +17,15 @@ class UsersController < ApplicationController
           redirect_to account_path
         end
         format.json do
-          render :show,
-                 status: :created,
-                 location: @user
+          render :show, status: :created, location: @user
         end
       else
         format.html do
           flash[:warning] = 'Ой... Что-то пошло не так'
-          render :new,
-                 status: :unprocessable_entity
+          render :new, status: :unprocessable_entity
         end
         format.json do
-          render json: @user.errors,
-                 status: :unprocessable_entity
+          render json: @user.errors, status: :unprocessable_entity
         end
       end
     end

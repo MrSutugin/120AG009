@@ -21,8 +21,13 @@
     </li>
     <!-- Links -->
     <li>
+      <%= link_to account_path, class: 'dropdown-item' do %>
+        <i class="fas fa-chart-line fa-fw me-2"></i> Панель управления
+      <% end %>
+    </li>
+    <li>
       <%= link_to user_path(current_user), class: 'dropdown-item' do %>
-        <i class="fas fa-user-tie fa-fw me-2"></i> Мой аккаунт
+        <i class="fas fa-user-tie fa-fw me-2"></i> Мой профиль
       <% end %>
     </li>
     <li>
