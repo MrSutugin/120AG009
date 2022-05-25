@@ -1,0 +1,41 @@
+
+<!-- ======================= Partial shared/user/_user_info START -->
+<%= render 'shared/user/user_info', user: current_user %>
+<!-- ======================= Partial shared/user/_user_info END -->
+
+
+<!-- ======================= Page content START -->
+<section class="pt-0">
+  <div class="container">
+    <div class="row">
+      <!-- Left sidebar START -->
+      <div class="col-lg-4">
+        <!-- Sidebar body -->
+        <div class="offcanvas-body p-0">
+          <div class="bg-light  rounded-3 pb-0 p-3 w-100 mb-4">
+            <!-- ======================= Partial shared/user/_dashboard_menu START -->
+            <%= render 'shared/user/dashboard_menu', user: current_user %>
+            <!-- ======================= Partial shared/user/_dashboard_menu END -->
+          </div>
+        </div>
+      </div>
+      <!-- Left sidebar END -->
+      <!-- Main content START -->
+      <div class="col-lg-8">
+        <div class="card border bg-transparent rounded-3 mb-0">
+          <!-- Card header -->
+          <div class="card-header bg-transparent border-bottom">
+            <h4 class="card-header-title mb-0">Редактирование товарищество</h4>
+          </div>
+          <!-- Card body -->
+          <div class="card-body">
+            <%= render "form", snt: @snt %>
+          </div>
+        </div>
+      </div>
+      <!-- Main content END -->
+    </div>
+    <!-- Row END -->
+  </div>
+</section>
+<!-- ======================= Page content END -->

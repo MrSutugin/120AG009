@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Snts</h1>
+
+<div id="snts">
+  <% @snts.each do |snt| %>
+    <%= render snt %>
+    <p>
+      <%= link_to "Show this snt", snt %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New snt", new_snt_path %>

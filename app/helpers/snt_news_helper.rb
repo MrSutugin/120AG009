@@ -1,0 +1,2 @@
+module SntNewsHelper
+end

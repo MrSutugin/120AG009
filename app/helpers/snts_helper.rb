@@ -1,0 +1,2 @@
+module SntsHelper
+end

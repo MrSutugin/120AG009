@@ -1,0 +1,27 @@
+<div id="<%= dom_id snt_news %>">
+
+  <div class="card bg-transparent border h-100">
+    <!-- Card header -->
+
+    <div class="card-body">
+      <h6><%= snt_news.name %></h6>
+      <p><%= snt_news.description %></p>
+    </div>
+
+    <!-- Card footer -->
+    <div class="card-footer bg-transparent border-top">
+      <div class="d-sm-flex justify-content-between align-items-center">
+        <!-- Rating star -->
+        <h6 class="mb-2 mb-sm-0">
+          <i class="fas fa-user-edit me-2"></i>
+          <span class="text-body">Автор:</span>
+          <%= snt_news.user.first_name %>
+          <%= snt_news.user.last_name %>
+        </h6>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

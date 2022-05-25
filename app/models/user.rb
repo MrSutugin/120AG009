@@ -10,4 +10,6 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
   before_create { self.user_uid = SecureRandom.hex(8) }
+  has_many :snts
+  has_many :snt_news
 end

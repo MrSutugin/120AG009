@@ -11,4 +11,6 @@ class AccountsController < ApplicationController
   end
   def journal
   end
+  def news
+  end
 end

@@ -1,0 +1,103 @@
+<div class="col-md-12" id="<%= dom_id snt %>">
+  <div class="card bg-transparent border h-100">
+    <!-- Card header -->
+    <div class="card-header bg-transparent border-bottom d-flex justify-content-between">
+      <div class="d-sm-flex align-items-center">
+        <!-- Avatar -->
+        <div class="avatar avatar-md flex-shrink-0">
+          <img class="avatar-img rounded-circle" src="https://picsum.photos/300/300" alt="avatar">
+        </div>
+        <!-- Info -->
+        <div class="ms-0 ms-sm-2 mt-2 mt-sm-0">
+          <h4 class="mb-0 h5">
+            <%= link_to snt_path(snt) do %>
+              <%= snt.name %>
+            <% end %>
+          </h4>
+          <span class="text-body small">
+            <i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>
+            <%= snt.address %>
+          </span>
+        </div>
+      </div>
+
+      <!-- Edit dropdown -->
+      <div class="dropdown text-end">
+        <a href="admin-student-list.html#" class="btn btn-sm btn-light btn-round small mb-0" role="button" id="dropdownShare2" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-three-dots fa-fw"></i>
+        </a>
+        <!-- dropdown button -->
+        <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare2" style="">
+          <li>
+            <%= link_to edit_snt_path(snt), class: "dropdown-item" do %>
+              <i class="bi bi-pencil-square fa-fw me-2"></i> Редактировать
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <h6>Описание</h6>
+      <p><%= snt.description %></p>
+      <h6>Члены</h6>
+      <p>
+      <ul class="avatar-group mb-0">
+        <li class="avatar avatar-sm">
+          <img class="avatar-img rounded-circle border-white" src="https://i.pravatar.cc/301" alt="avatar">
+        </li>
+        <li class="avatar avatar-sm">
+          <img class="avatar-img rounded-circle border-white" src="https://i.pravatar.cc/302" alt="avatar">
+        </li>
+        <li class="avatar avatar-sm">
+          <img class="avatar-img rounded-circle border-white" src="https://i.pravatar.cc/303" alt="avatar">
+        </li>
+        <li class="avatar avatar-sm">
+          <img class="avatar-img rounded-circle border-white" src="https://i.pravatar.cc/304" alt="avatar">
+        </li>
+        <li class="avatar avatar-sm">
+          <img class="avatar-img rounded-circle border-white" src="https://i.pravatar.cc/305" alt="avatar">
+        </li>
+        <li class="avatar avatar-sm">
+          <img class="avatar-img rounded-circle border-white" src="https://i.pravatar.cc/306" alt="avatar">
+        </li>
+        <li class="avatar avatar-sm">
+          <img class="avatar-img rounded-circle border-white" src="https://i.pravatar.cc/307" alt="avatar">
+        </li>
+        <li class="avatar avatar-sm">
+          <img class="avatar-img rounded-circle border-white" src="https://i.pravatar.cc/308" alt="avatar">
+        </li>
+        <li class="avatar avatar-sm">
+          <div class="avatar-img rounded-circle border-white bg-primary">
+            <span class="text-white position-absolute top-50 start-50 translate-middle small"><i class="fas fa-external-link-alt"></i></span>
+          </div>
+        </li>
+      </ul>
+      </p>
+
+      <% if controller.action_name == "show" %>
+        <h6>Новости</h6>
+        <div class="row g-4" id="snts">
+          <% @news.each do |snt_news| %>
+            <%= render snt_news %>
+          <% end %>
+        </div>
+
+      <% end %>
+
+    </div>
+
+    <!-- Card footer -->
+    <div class="card-footer bg-transparent border-top">
+      <div class="d-sm-flex justify-content-between align-items-center">
+        <!-- Rating star -->
+        <h6 class="mb-2 mb-sm-0">
+          <i class="fas fa-house-user me-2"></i>
+          <span class="text-body">Председатель:</span>
+          <%= snt.user.first_name %>
+          <%= snt.user.last_name %>
+        </h6>
+      </div>
+    </div>
+  </div>
+</div>
